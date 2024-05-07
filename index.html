@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h4{
+            text-align: center;
+            font-size: 01.3rem;
+            font-family: "forte";
+            text-shadow: 0.22rem 0.2rem 1rem red;
+        }
+        body{
+            font-family: forte;
+            background-color: whitesmoke;
+        }
+        #myChart{
+            width: 80%;
+            height: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <h4>Monthly Sales Data</h4>
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const chart = document.getElementById("myChart")
+        new Chart (chart, {
+            type: "bar",
+            data:{
+                labels:['January', 'February', 'March', 'April', 'May'],
+                datasets: [{
+                    label: '# of Monthly Sales',
+                    data: [65, 59, 80, 81, 56] ,
+                    borderWidth: 1,
+                    backgroundColor: "red",
+                    
+                }]
+            },
+            options: {
+                legend: {
+                    labels: {
+                        fontColor: "blue",
+                        fontSize: 5
+                    }
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            fontColor: "green",
+                            fontSize: 18,
+                            stepSize: 1,
+                            beginAtZero: true
+                        }
+                    }],
+                    xAxes: [{
+                        ticks: {
+                            fontColor: "purple",
+                            fontSize: 14,
+                            stepSize: 1,
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        })
+    </script>
+</body>
+</html>
